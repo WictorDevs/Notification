@@ -22,5 +22,11 @@ urlpatterns = [
         views.NotificacaoMarcarLidaView.as_view(),
         name='notificacao-marcar-lida',
     ),
+
+    path(
+    'api/notificacoes/marcar-todas-lidas/',
+    views.NotificacaoMarcarTodasLidasView.as_view(),
+    name='notificacao-marcar-todas-lidas',
+),
     
 ]

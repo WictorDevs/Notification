@@ -69,3 +69,12 @@ class NotificacaoCreateView(APIView):
             NotificationSerializer(notificacao).data,
             status=status.HTTP_201_CREATED,
         )
+class NotificacaoMarcarTodasLidasView(APIView):
+    """
+    PATCH /api/notificacoes/marcar-todas-lidas/
+    Marca todas as notificacoes do usuario como lidas.
+    """
+    def patch(self, request):
+        target = get_target_from_headers(request)
+        Notification.objects.filter(target=target, is_read=False).update(is_read=True)
+        return Response({'status': 'todas marcadas como lidas'})

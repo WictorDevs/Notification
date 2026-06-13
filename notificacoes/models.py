@@ -33,6 +33,7 @@ class Target(models.Model):
 
 
 class Notification(models.Model):
+    titulo = models.CharField(max_length=200, blank=True, default='')
     target = models.ForeignKey(Target, on_delete=models.CASCADE, related_name='notificacoes')
     mensagem = models.TextField()
     is_read = models.BooleanField(default=False)
