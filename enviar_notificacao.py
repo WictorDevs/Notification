@@ -3,7 +3,7 @@
 import requests
 
 MS_URL = 'http://127.0.0.1:8001'
-API_KEY = 'cad4eb183b567f6b'
+API_KEY = 'cole_aqui_o_hash_da_empresa'
 
 headers = {
     'X-Api-Key': API_KEY,
