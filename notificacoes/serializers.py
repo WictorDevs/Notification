@@ -11,4 +11,5 @@ class NotificationSerializer(serializers.ModelSerializer):
 
 class NotificationCreateSerializer(serializers.Serializer):
     user_id = serializers.IntegerField()
+    titulo = serializers.CharField(required=False, default='')
     mensagem = serializers.CharField()
